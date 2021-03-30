@@ -7,14 +7,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DepartmentsComponent } from './components/departments/departments.component';
 import { TimesheetComponent } from './components/timesheet/timesheet.component';
-import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
-import { AnalyticsTableComponent } from './components/analytics-table/analytics-table.component';
 import { MaterialModule } from './modules/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AnalyticsModule } from './analyticsModule/analytics.module';
 
 
 @NgModule({
@@ -22,9 +21,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AppComponent,
     DepartmentsComponent,
     TimesheetComponent,
-    AnalyticsComponent,
     TopNavbarComponent,
-    AnalyticsTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +31,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     FormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AnalyticsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
